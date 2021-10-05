@@ -1,0 +1,53 @@
+opam-version: "2.0"
+synopsis: "The learn-ocaml client"
+description: """\
+This contains the binaries to interact with the learn-ocaml
+platform from the command line."""
+maintainer: "Yann Régis-Gianas"
+authors: [
+  "Benjamin Canou (OCamlPro)"
+  "Çağdaş Bozman (OCamlPro)"
+  "Grégoire Henry (OCamlPro)"
+  "Louis Gesbert (OCamlPro)"
+  "Pierrick Couderc (OCamlPro)"
+]
+license: "MIT"
+homepage: "https://github.com/ocaml-sf/learn-ocaml"
+bug-reports: "https://github.com/ocaml-sf/learn-ocaml/issues"
+depends: [
+  "base" {>= "v0.9.4"}
+  "base64"
+  "cmdliner"
+  "omd" {<= "1.3.1"}
+  "asak"
+  "gg"
+  "vg"
+  "cohttp" {>= "2.0.0"}
+  "cohttp-lwt-unix" {>= "2.0.0"}
+  "ssl" {= "0.5.5"}
+  "digestif" {>= "0.7.1"}
+  "dune"
+  "ezjsonm"
+  "lwt" {>= "4.0.0"}
+  "lwt_ssl"
+  "ocaml" {(>= "4.12") & (< "4.13~")}
+  "ocamlfind" {build}
+  "ocp-indent-nlfork"
+  "ocp-ocamlres" {>= "0.4"}
+  "ocplib-json-typed" {>= "0.7"}
+  "ipaddr" {= "2.8.0"}
+  "cstruct" {>= "3.3.0"}
+  "ppx_tools"
+  "ppx_sexp_conv"
+  "ppx_fields_conv"
+]
+build: ["dune" "build" "@install" "-p" name "-j" jobs]
+dev-repo: "git+https://github.com/ocaml-sf/learn-ocaml"
+url {
+  src:
+    "https://github.com/erikmd/learn-ocaml-release-preflight/archive/v0.13.2.tar.gz"
+  checksum: [
+    "md5=604b81622b6e7baa0b999810a1bd26a0"
+    "sha512=4c7a13f1870a4276c141d688c0f9c0cb9b64bb8f2bc60db38ed9dd8b22f937bcbe21990f9881d20a758c4522c4dea3007205b6d145e10cf2060a8ec8b2d1add9"
+  ]
+}
